@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a72d8f7-f247-42af-9e35-c6d52b0d511a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/MainService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/MainService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../viber_aplikacija/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../viber_aplikacija/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../viber_aplikacija/bot.php" beforeDir="false" afterPath="$PROJECT_DIR$/../viber_aplikacija/bot.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../viber_aplikacija/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/../viber_aplikacija/config.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/src/Services/MainService.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="470">
-              <caret line="66" column="31" lean-forward="true" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+              <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -184,12 +182,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553710274485</updated>
-      <workItem from="1553710276128" duration="5410000" />
+      <workItem from="1553710276128" duration="5687000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5410000" />
+    <option name="totallyTimeSpent" value="5687000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -233,7 +231,7 @@
     <entry file="file://$PROJECT_DIR$/src/Services/MainService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
-          <caret line="66" column="31" lean-forward="true" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
         </state>
       </provider>
     </entry>

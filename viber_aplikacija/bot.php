@@ -135,7 +135,7 @@ try {
                 ->setReceiver($event->getSender()->getId());
             $text_message = explode(' ', $event->getMessage()->getText());
             $plate_number = $text_message[0];
-            $message_name = $text_message[1];
+            $message_name = substr(strstr($event->getMessage()->getText(), " "), 1);
             $id = $event->getSender()->getId();
             try {
                 $plate = apiSelect($urlSelectPlates, $plate_number);
