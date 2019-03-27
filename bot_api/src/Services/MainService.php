@@ -49,13 +49,6 @@ class MainService
         $statement->bindParam(':created_at', $data['created_at']);
         $statement->execute();
     }
-    public function selectMessages($user_id, $plate_id)
-    {
-        $statement = $this->pdo->getConnection()->prepare('SELECT * FROM messages WHERE user_id = :user_id AND plate_id = :plate_id ORDER BY DESC LIMIT 1');
-        $statement->bindParam(':user_id', $user_id);
-        $statement->bindParam(':plate_id', $plate_id);
-        $statement->execute();
-    }
     public function insertMessages($data)
     {
         $statement = $this->pdo->getConnection()->prepare('INSERT INTO messages (name, user_id, plate_id, created_at) VALUES (:name, :user_id, :plate_id, :created_at)');
@@ -64,6 +57,14 @@ class MainService
         $statement->bindParam(':plate_id', $data['plate_id']);
         $statement->bindParam(':created_at', $data['created_at']);
         $statement->execute();
+    }
+    public function selectUsersByPlate($number)
+    {
+        $statement = $this->pdo->getConnection()->prepare('SELECT * FROM plates AS p INNER JOIN users AS u ON p.user_id = u.id WHERE p.number = :number');
+        $statement->bindParam(':number', $number);
+        $statement->execute();
+        $userByPlate = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        return $userByPlate[0];
     }
     public function insertLog($request, $exception)
     {

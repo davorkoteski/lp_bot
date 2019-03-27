@@ -54,6 +54,7 @@ $urlAddUsers = 'http://127.0.0.1:8000/api/add-users';
 $urlSelectPlates = 'http://127.0.0.1:8000/api/select-plates/';
 $urlAddPlates = 'http://127.0.0.1:8000/api/add-plates';
 $urlAddMessages = 'http://127.0.0.1:8000/api/add-messages';
+$urlSelectUsersByPlate = 'http://127.0.0.1:8000/api/select-users-by-plate/';
 
 try {
     // create bot instance
@@ -127,7 +128,7 @@ try {
                 }
             }
         })
-        ->onText('|.* .*|s', function ($event) use ($bot, $botSender, $log, $pdo, $urlSelectUsers, $urlSelectPlates, $urlAddMessages) {
+        ->onText('|.* .*|s', function ($event) use ($bot, $botSender, $log, $pdo, $urlSelectUsers, $urlSelectPlates, $urlAddMessages, $urlSelectUsersByPlate) {
             $log->info('register plate' . var_export($event, true));
             $message = (new \Viber\Api\Message\Text())
                 ->setSender($botSender)
@@ -144,6 +145,14 @@ try {
                     $user = json_decode($user, true);
                     $data = array('name' => $message_name, 'user_id' => $user['id'], 'plate_id' => $plate['id'], 'created_at' => date("Y-m-d H:i:s"));
                     apiPost($urlAddMessages, $data);
+                    $userByPlate = apiSelect($urlSelectUsersByPlate, $plate_number);
+                    $userByPlate = json_decode($userByPlate, true);
+                    $bot->getClient()->sendMessage(
+                        (new \Viber\Api\Message\Text())
+                            ->setSender($botSender)
+                            ->setReceiver($userByPlate['app_id'])
+                            ->setText($message_name)
+                    );
                     $bot->getClient()->sendMessage(
                         $message
                             ->setText('The message was sent')

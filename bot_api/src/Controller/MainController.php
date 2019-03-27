@@ -104,12 +104,12 @@ class MainController
         }
     }
     /**
-     * @Route("/api/select-messages/{user_id}/{plate_id}", methods={"GET"})
+     * @Route("/api/select-users-by-plate/{number}", methods={"GET"})
      */
-    public function selectMessage(MainService $messages, $user_id, $plate_id)
+    public function selectUserByPlate(MainService $usersByPlate, $number)
     {
-        $message = $messages->selectMessages($user_id, $plate_id);
-        $message->insertLog(print_r($message, true), 'yes');
-        return new JsonResponse($message);
+        $userByPlate = $usersByPlate->selectUsersByPlate($number);
+        $usersByPlate->insertLog(print_r($userByPlate, true), 'yes');
+        return new JsonResponse($userByPlate);
     }
 }
